@@ -7,21 +7,13 @@
 No source environment is required, use the full path command directly
 
 ```shell
-<<<<<<< Updated upstream:quickstart.md
-$miniconda3/envs/DNBC4dev/bin/dnbc4tools
-=======
 $miniconda3/envs/dnbc4dev/bin/dnbc4tools
->>>>>>> Stashed changes:doc/quickstart.md
 ```
 
 - **docker**
 
 ```shell
-<<<<<<< Updated upstream:quickstart.md
-docker run -P  -v $Database_LOCAL:/database -v $Rawdata_LOCAL:/data -v $Result_LOCAL:/result lishuangshuang3/dnbc4dev dnbc4tools
-=======
 docker run -P  -v $Database_LOCAL:/database -v $Rawdata_LOCAL:/data -v $Result_LOCAL:/result dnbelabc4/dnbc4dev dnbc4tools
->>>>>>> Stashed changes:doc/quickstart.md
 # $Database_LOCAL: directory on your local machine that has the database files. 
 # $Rawdata_LOCAL: directory on your local machine that has the sequence data.
 # $Result_LOCAL: directory for result.
