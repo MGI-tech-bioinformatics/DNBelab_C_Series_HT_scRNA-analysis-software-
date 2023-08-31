@@ -7,7 +7,7 @@ DNBelab_C_Series_HT_singlecell-analysis-software analysis software can be based 
 ##### 1.1 Clone repo
 
 ```shell
-git clone -b DNBC4_Dev https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software.git
+git clone -b DNBC4_Dev https://github.com/lishuangshuang0616/DNBelab_C_Series_HT_scRNA-analysis-software.git
 chmod 755 -R DNBelab_C_Series_HT_scRNA-analysis-software
 cd DNBelab_C_Series_HT_scRNA-analysis-software
 ```
