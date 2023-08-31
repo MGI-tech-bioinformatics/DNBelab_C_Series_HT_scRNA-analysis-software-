@@ -384,7 +384,7 @@ dependencies:
   - zlib=1.2.13=h166bdaf_4
   - zstd=1.5.5=hc292b87_0
   - pip:
-      - dnbc4dev==2.2.1
+      - dnbc4dev==2.2.2
       - polars==0.13.40
       - tarjan==0.2.3.2
       - typing-extensions==4.5.0
