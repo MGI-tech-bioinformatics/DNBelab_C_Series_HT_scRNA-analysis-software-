@@ -21,10 +21,6 @@ source /miniconda3/bin/activate
 conda env create -f dnbc4tools.yaml -n dnbc4tools
 ```
 > *Note: Updated the environment from version 2.1.0 to the new version without the need for a fresh installation. You only need to install the **'pyahocorasick'** package within the dnbc4tools conda environment and update **'dnbc4tools'** as follows:*
-```
-pip install pyahocorasick
-pip install --upgrade dnbc4tools
-````
 
 ### 2. container
 
