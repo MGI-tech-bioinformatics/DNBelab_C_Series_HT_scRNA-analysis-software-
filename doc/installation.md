@@ -7,7 +7,7 @@ DNBelab_C_Series_HT_singlecell-analysis-software analysis software can be based 
 ##### 1.1 Clone repo
 
 ```shell
-git clone -b DNBC4_Dev https://github.com/lishuangshuang0616/DNBelab_C_Series_HT_scRNA-analysis-software.git
+git clone https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software.git
 chmod 755 -R DNBelab_C_Series_HT_scRNA-analysis-software
 cd DNBelab_C_Series_HT_scRNA-analysis-software
 ```
@@ -18,18 +18,23 @@ Requires conda to be installed
 
 ```shell
 source /miniconda3/bin/activate
-conda env create -f dnbc4dev.yaml -n dnbc4dev
+conda env create -f dnbc4tools.yaml -n dnbc4tools
 ```
+> *Note: Updated the environment from version 2.1.0 to the new version without the need for a fresh installation. You only need to install the **'pyahocorasick'** package within the dnbc4tools conda environment and update **'dnbc4tools'** as follows:*
+```
+pip install pyahocorasick
+pip install --upgrade dnbc4tools
+````
 
 ### 2. container
 
 ##### Singularity
 
 ```shell
-singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4dev
+singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4tools
 ```
 ##### Docker
 
 ```shell
-docker pull dnbelabc4/dnbc4dev
+docker pull dnbelabc4/dnbc4tools
 ```
