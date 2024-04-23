@@ -22,5 +22,3 @@ An open source and flexible pipeline to analyze high-throughput DNBelab C Series
 ## Support
 
 - Please use github issue tracker for questions. [**issues**](https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/issues)
-- Note: *Updated the environment from version 2.1.0 to the new version 2.1.1 without requiring a reinstall, you only need to install the python package 'pyahocorasick' and update 'dnbc4tools'*.
-- Note: *Upgrading to version 2.1.\* requires rebuilding the scRNA reference database. For more details, please refer to the quick start guide.*

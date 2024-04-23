@@ -4,24 +4,32 @@ DNBelab_C_Series_HT_singlecell-analysis-software analysis software can be based 
 
 ### 1. Conda
 
-##### 1.1 Clone repo
+##### Create dnbc4tools environment
 
-```shell
-git clone https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software.git
-chmod 755 -R DNBelab_C_Series_HT_scRNA-analysis-software
-cd DNBelab_C_Series_HT_scRNA-analysis-software
-```
-
-##### 1.2 Create dnbc4tools environment
-
-Requires conda to be installed
+1.1 Requires [conda](https://docs.anaconda.com/free/miniconda/) to be installed
 
 ```shell
 source /miniconda3/bin/activate
+conda create -n dnbc4tools python=3.8 perl
+conda activate dnbc4tools
+```
+1.2 Install dnbc4tools
+
+```shell
+conda install -c conda-forge -c bioconda htslib=1.18 samtools=1.18
+pip install dnbc4tools==2.1.2
+```
+Successfully installed dnbc4tools
+
+</br>
+
+Notes:
+- If the `annoy` package installation fails,  use `conda install conda-forge::python-annoy`.
+- You can also create dnbc4tools environment using YAML:
+```
+wget https://raw.githubusercontent.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/version2.0/dnbc4tools.yaml
 conda env create -f dnbc4tools.yaml -n dnbc4tools
 ```
-> *Note: Updated the environment from version 2.1.0 to the new version 2.1.1 without requiring a reinstall. You only need to install the '**pyahocorasick** [ pip install pyahocorasick ]'  package within the dnbc4tools conda environment and update '**dnbc4tools** [ pip install --upgrade dnbc4tools ]' .*
-
 
 ### 2. container
 

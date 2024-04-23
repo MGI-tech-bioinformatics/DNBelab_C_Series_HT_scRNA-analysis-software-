@@ -2,9 +2,11 @@
 
 ### **1. dnbc4tools**
 
+Comments starting with "#" in the code are for informational purposes and do not require input.
+
 - **Conda**
 
-No source environment is required, use the full path command directly
+No need for source to activate the conda environment.  Just use the command line directly.
 
 ```shell
 $miniconda3/envs/dnbc4tools/bin/dnbc4tools
@@ -28,7 +30,8 @@ singularity exec dnbc4tools.sif dnbc4tools
 # export SINGULARITY_BINDPATH=$data,$result,$database
 ```
 
-
+</br>
+</br>
 
 ### **2. scRNA**
 
@@ -43,7 +46,7 @@ gzip -d GRCh38.primary_assembly.genome.fa.gz
 gzip -d gencode.v32.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.v32.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
-                        
+               
 $dnbc4tools rna mkref --ingtf genes.filter.gtf --fasta GRCh38.primary_assembly.genome.fa --threads 10 --species Homo_sapiens
 ```
 
@@ -60,7 +63,7 @@ $dnbc4tools tools mkgtf --ingtf gencode.vM23.primary_assembly.annotation.gtf --o
 $dnbc4tools rna mkref --ingtf genes.filter.gtf --fasta GRCm38.primary_assembly.genome.fa --threads 10 --species Mus_musculus
 ```
 
-> *Note: version 2.0.\* requires rebuilding the reference database, using the parameter "--noindex" to skip the scStar index generation.*
+
 
 #### 2.2 RUN
 
@@ -83,8 +86,11 @@ $dnbc4tools rna multi --list samplelist \
          --genomeDir /database/scRNA/Mus_musculus/mm10 \
          --threads 10
 ```
+[More detailed parameter description](./scRNA_para.md)
 
 
+</br>
+</br>
 
 ### 3. scATAC
 
@@ -100,7 +106,7 @@ gzip -d gencode.v32.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.v32.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
                         
-$dnbc4tools atac mkref --fasta GRCh38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Homo_sapiens --blacklist hg38 --prefix chr
+$dnbc4tools atac mkref --fasta GRCh38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Homo_sapiens --prefix chr
 ```
 
 - **Mouse(GRCm38)**
@@ -113,7 +119,7 @@ gzip -d gencode.vM23.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.vM23.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
                         
-$dnbc4tools atac mkref --fasta GRCm38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Mus_musculus --blacklist mm10 --prefix chr
+$dnbc4tools atac mkref --fasta GRCm38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Mus_musculus --prefix chr
 ```
 
 #### 3.2 RUN
@@ -135,4 +141,8 @@ $dnbc4tools atac multi --list samplelist \
          --genomeDir /database/scATAC/Mus_musculus/mm10  \
          --threads 10
 ```
+[More detailed parameter description](./scATAC_para.md)
 
+</br>
+
+#### [Output results for further analysis](./io.md)
