@@ -199,4 +199,4 @@ dependencies:
       - polars-lts-cpu==0.20.2
       - pyahocorasick==2.0.0
       - tarjan==0.2.4
-      - dnbc4dev==2.3.6
+      - dnbc4tools==2.1.2
