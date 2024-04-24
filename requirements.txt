@@ -1,0 +1,12 @@
+polars-lts-cpu==0.20.2
+scanpy[leiden] == 1.9.8
+pyranges
+pyahocorasick==2.0.0
+pysam
+datatable==0.11.1
+tarjan
+pyarrow
+scrublet
+macs2==2.2.9.1
+scikit-misc
+plotly
