@@ -6,7 +6,7 @@ Comments starting with "#" in the code are for informational purposes and do not
 
 - **Conda**
 
-No need for source to activate the conda environment.  Just use the command line directly.
+Command line doesn't require sourcing the conda environment. You can directly use the dnbc4tools path for execution.
 
 ```shell
 $miniconda3/envs/dnbc4tools/bin/dnbc4tools
