@@ -195,6 +195,7 @@ read_signac_C4 <- function(mex_dir_path, fragments, singlecellmetadata){
         assay = "peaks",
         meta.data = metadata
     )
+    return(scATAC)
 }
 ```
 
