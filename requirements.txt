@@ -1,5 +1,5 @@
 polars-lts-cpu==0.20.2
-scanpy[leiden] == 1.9.8
+scanpy[leiden]==1.9.8
 pyranges
 pyahocorasick==2.0.0
 pysam
