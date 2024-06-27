@@ -1,5 +1,6 @@
-[![PyPI](https://img.shields.io/pypi/v/dnbc4dev)](https://pypi.org/project/DNBC4dev)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dnbelabc4/dnbc4dev)](https://hub.docker.com/r/dnbelabc4/dnbc4dev)
+[![Github Release](https://img.shields.io/github/v/release/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software)](https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/releases)
+[![PyPI](https://img.shields.io/pypi/v/dnbc4tools)](https://pypi.org/project/DNBC4tools)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dnbelabc4/dnbc4tools)](https://hub.docker.com/r/dnbelabc4/dnbc4tools)
 
 # DNBelab_C_Series_HT_singlecell-analysis-software
 
@@ -21,5 +22,13 @@ An open source and flexible pipeline to analyze high-throughput DNBelab C Series
 ## Support
 
 - Please use github issue tracker for questions. [**issues**](https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/issues)
-- Note: *Upgrading to version dev will necessitate recreating the analysis environment. If you downloaded the previous dev version, you only need to manually install the python package **pyahocorasick** and update **dnbc4dev***.
-- Note: *Upgrading to version dev requires rebuilding the scRNA reference database. For more details, please refer to the quick start guide.If you have processed the database according to the dev version or 2.1.0 version, you do not need to re-modify.*
+
+
+> [!TIP]
+>
+> CHANGELOG:  2.1.3 pre-release
+>
+> 1. Added single-cell immune repertoire analysis.
+> 2. Optimizing high memory usage when performing combined single-cell ATAC analysis
+> 3. Improved single-cell RNA sequencing I/O for high-thread scenarios, reducing analysis time.
+> 4. Added the function of checking whether the gtf format is correct and generating a new gtf file in the correct format.

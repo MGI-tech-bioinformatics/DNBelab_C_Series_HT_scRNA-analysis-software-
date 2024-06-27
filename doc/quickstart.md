@@ -1,36 +1,39 @@
 # Quick start
 
-### 1. dnbc4tools
+### **1. dnbc4tools**
 
-- **conda**
+Comments starting with "#" in the code are for informational purposes and do not require input.
 
-No source environment is required, use the full path command directly
+- **Conda**
+
+Command line doesn't require sourcing the conda environment. You can directly use the dnbc4tools path for execution.
 
 ```shell
-$miniconda3/envs/dnbc4dev/bin/dnbc4tools
+$miniconda3/envs/dnbc4tools/bin/dnbc4tools
 ```
 
-- **docker**
+- **Docker**
 
 ```shell
-docker run -P  -v $Database_LOCAL:/database -v $Rawdata_LOCAL:/data -v $Result_LOCAL:/result dnbelabc4/dnbc4dev dnbc4tools
+docker run -P  -v $Database_LOCAL:/database -v $Rawdata_LOCAL:/data -v $Result_LOCAL:/result dnbelabc4/dnbc4tools dnbc4tools
 # $Database_LOCAL: directory on your local machine that has the database files. 
 # $Rawdata_LOCAL: directory on your local machine that has the sequence data.
 # $Result_LOCAL: directory for result.
 ```
 
-- **singularity**
+- **Singularity**
 
 ```shell
 export SINGULARITY_BIND=$data,$result,$database
-singularity exec dnbc4dev.sif dnbc4tools
+singularity exec dnbc4tools.sif dnbc4tools
 # You can bind multiple directories by Using the environment variable:
 # export SINGULARITY_BINDPATH=$data,$result,$database
 ```
 
+</br>
+</br>
 
-
-### 2. scRNA
+### **2. scRNA**
 
 #### 2.1 Build index for reference genome
 
@@ -43,7 +46,7 @@ gzip -d GRCh38.primary_assembly.genome.fa.gz
 gzip -d gencode.v32.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.v32.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
-                        
+               
 $dnbc4tools rna mkref --ingtf genes.filter.gtf --fasta GRCh38.primary_assembly.genome.fa --threads 10 --species Homo_sapiens
 ```
 
@@ -60,11 +63,11 @@ $dnbc4tools tools mkgtf --ingtf gencode.vM23.primary_assembly.annotation.gtf --o
 $dnbc4tools rna mkref --ingtf genes.filter.gtf --fasta GRCm38.primary_assembly.genome.fa --threads 10 --species Mus_musculus
 ```
 
-> *Note: version 2.0 has built the reference database using the parameter "--noindex" to skip the scStar index generation process*
+
 
 #### 2.2 RUN
 
-**Running the entire workflow**
+**Running the main workflow**
 
 ```shell
 $dnbc4tools rna run \
@@ -83,8 +86,10 @@ $dnbc4tools rna multi --list samplelist \
          --genomeDir /database/scRNA/Mus_musculus/mm10 \
          --threads 10
 ```
+[More detailed parameter description](./scRNA_para.md)
 
-
+</br>
+</br>
 
 ### 3. scATAC
 
@@ -100,7 +105,7 @@ gzip -d gencode.v32.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.v32.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
                         
-$dnbc4tools atac mkref --fasta GRCh38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Homo_sapiens --blacklist hg38 --prefix chr
+$dnbc4tools atac mkref --fasta GRCh38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Homo_sapiens --prefix chr
 ```
 
 - **Mouse(GRCm38)**
@@ -113,12 +118,12 @@ gzip -d gencode.vM23.primary_assembly.annotation.gtf.gz
 
 $dnbc4tools tools mkgtf --ingtf gencode.vM23.primary_assembly.annotation.gtf --output genes.filter.gtf --type gene_type
                         
-$dnbc4tools atac mkref --fasta GRCm38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Mus_musculus --blacklist mm10 --prefix chr
+$dnbc4tools atac mkref --fasta GRCm38.primary_assembly.genome.fa --ingtf genes.filter.gtf --species Mus_musculus --prefix chr
 ```
 
 #### 3.2 RUN
 
-**Running the entire workflow**
+**Running the main workflow**
 
 ```shell
 $dnbc4tools atac run \
@@ -135,4 +140,34 @@ $dnbc4tools atac multi --list samplelist \
          --genomeDir /database/scATAC/Mus_musculus/mm10  \
          --threads 10
 ```
+[More detailed parameter description](./scATAC_para.md)
+
+</br>
+
+</br>
+
+### 4. scV(D)J
+
+#### 4.1 RUN
+
+**Running the main workflow**
+
+Requires 5' scRNA analysis of the sample to be completed
+
+```SHELL
+$dnbc4tools vdj run \
+	--fastq1 /test/data/test1_R1.fastq.gz,/test/data/test2_R1.fastq.gz \
+	--fastq2 /test/data/test1_R2.fastq.gz,/test/data/test2_R2.fastq.gz \
+	--beadstrans /scRNA/test/output/singlecell.csv \
+	--ref Human \
+	--name test \
+	--threads 10 \
+	--chain TR
+```
+
+[More detailed parameter description](./scVDJ_para.md)
+
+
+
+#### [Output results for further analysis](./io.md)
 
