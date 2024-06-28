@@ -35,7 +35,7 @@ Successfully installed dnbc4tools
 ##### Singularity
 
 ```shell
-singularity build dnbc4dev.sif docker://dnbelabc4/dnbc4tools:2.1.3rc1
+singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4tools:2.1.3rc1
 ```
 ##### Docker
 
