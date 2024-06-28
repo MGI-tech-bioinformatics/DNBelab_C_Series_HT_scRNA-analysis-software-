@@ -28,7 +28,7 @@ An open source and flexible pipeline to analyze high-throughput DNBelab C Series
 >
 > CHANGELOG:  2.1.3 pre-release
 >
-> 1. Added single-cell immune repertoire analysis.
-> 2. Optimizing high memory usage when performing combined single-cell ATAC analysis
-> 3. Improved single-cell RNA sequencing I/O for high-thread scenarios, reducing analysis time.
-> 4. Added the function of checking whether the gtf format is correct and generating a new gtf file in the correct format.
+> - Added single-cell immune repertoire analysis.
+> - Optimizing high memory usage when performing combined single-cell ATAC analysis
+> - Improved single-cell RNA sequencing I/O for high-thread scenarios, reducing analysis time.
+> - Added the function of checking whether the gtf format is correct and generating a new gtf file in the correct format.
