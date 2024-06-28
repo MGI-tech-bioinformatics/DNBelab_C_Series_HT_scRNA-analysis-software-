@@ -30,15 +30,15 @@ Successfully installed dnbc4tools
 
 
 
-### 2. container
+### 2. container (Currently unavailable)
 
 ##### Singularity
 
 ```shell
-singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4tools:2.1.3rc1
+singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4tools
 ```
 ##### Docker
 
 ```shell
-docker pull dnbelabc4/dnbc4tools:2.1.3rc1
+docker pull dnbelabc4/dnbc4tools
 ```
