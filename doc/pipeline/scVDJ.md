@@ -23,6 +23,8 @@
 > - 换行符 `\` 用于在命令行中将命令分为多行，以提高可读性。它表示命令未结束，下一行是该命令的继续。如果分析输入在一行中，则不需要使用反斜杠。
 
 
+</br>
+</br>
 
 ### VDJ 分析步骤
 
@@ -46,11 +48,11 @@ $dnbc4tools rna run \
 		--end5
 ```
 
-
+</br>
 
 #### 第二步：准备文件
 
-有关 FASTQ 文件的详细信息，请[参考](../input/输入文件.md### 1.1 dnbc4tools rna run 输入文件)
+FASTQ 文件
 
 对应样本5端转录组分析结果目录中 *singlecell.csv*文件，分析内容包括 CELL 列和 BARCODE 列对应的合并信息，以及 is_cell_barcode 列指示的 5' 端鉴定的细胞（1 表示是细胞，0 表示不是细胞）。
 
@@ -65,7 +67,7 @@ CELL61325_N1,333844,8020,102564,244945,1,GCTCGTTAGTTACGTTATGG
 CELL624_N2,356813,8266,101929,262750,1,AAGTAAGCGTGCGAATGACT;GTGTCACGAGGGCACTACTG
 ```
 
-
+</br>
 
 #### 第三步：主分析流程
 
@@ -99,7 +101,6 @@ $dnbc4tools vdj run \
 		--threads 10
 ```
 
-其他参数参考[dnbc4tools vdj run](./命令行参数.md#1.单细胞VDJ#1.1 run)
 
 在对暗反应自动检测后，软件开始运行分析，以下是一个示例：
 
