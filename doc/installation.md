@@ -1,45 +1,61 @@
-# Installation
+# Software Installation
 
-DNBelab_C_Series_HT_singlecell-analysis-software analysis software can be based on conda environment or docker/singularity container.
+## 1. System Requirements
 
-### 1. Conda
+To run the *dnbc4tools* package on a Linux-based system, the following minimum requirements are necessary:
 
-##### Create dnbc4tools environment
-
-1.1 Requires [conda](https://docs.anaconda.com/free/miniconda/) to be installed
-
-```shell
-source /miniconda3/bin/activate
-conda create -n dnbc4tools python=3.8 perl
-conda activate dnbc4tools
-```
-1.2 Install dnbc4tools
-
-```shell
-conda install -c conda-forge -c bioconda htslib=1.18 samtools=1.18
-pip install dnbc4tools==2.1.2
-```
-Successfully installed dnbc4tools
+- **x86-64 compatible processor**
+- **50 GB RAM** and **4 CPUs**
+- **CentOS 7.x** 64-bit operating system (Linux kernel 3.10.0) or a compatible newer version
 
 </br>
+</br>
 
-Notes:
-- If the `annoy` package installation fails,  use `conda install conda-forge::python-annoy`.
-- You can also create dnbc4tools environment using YAML:
-```
-wget https://raw.githubusercontent.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/version2.0/dnbc4tools.yaml
-conda env create -f dnbc4tools.yaml -n dnbc4tools
-```
+## 2. Software Download
 
-### 2. container
+### dnbc4tools 2.1.3 (Released: October 9, 2024)
 
-##### Singularity
+**Download for Linux 64-bit**: [dnbc4tools2.1.3.tar.gz](https://ftp.cngb.org/pub/CNSA/data5/CNP0006367/Single_Cell/CSE0000448/dnbc4tools2.1.3.tar.gz)
+
+- **File size**: 495M
+- **md5sum**: dfda9a3f308aaa3fdaa6c2a971bb2821
 
 ```shell
-singularity build dnbc4tools.sif docker://dnbelabc4/dnbc4tools
+#### Download using `wget`
+wget -O dnbc4tools2.1.3.tar.gz "https://ftp.cngb.org/pub/CNSA/data5/CNP0006367/Single_Cell/CSE0000448/dnbc4tools2.1.3.tar.gz"
+#### Download using `curl`
+curl -o dnbc4tools2.1.3.tar.gz "https://ftp.cngb.org/pub/CNSA/data5/CNP0006367/Single_Cell/CSE0000448/dnbc4tools2.1.3.tar.gz"
 ```
-##### Docker
 
-```shell
-docker pull dnbelabc4/dnbc4tools
-```
+**New Features in dnbc4tools 2.1.3**
+
+- Available as a tar.gz compressed file, requiring no additional configuration.
+- **New Modules**: Single-cell RNA 5' Transcriptome Analysis and Single-cell VDJ Analysis.
+
+</br>
+</br>
+
+## 3. Software Installation
+
+*dnbc4tools* is distributed as a tar.gz package that can be directly extracted and run without any additional setup. All necessary dependencies are precompiled, making the software compatible with most Linux environments.
+
+1. **Download and extract the dnbc4tools package** to a suitable directory. In this example, it will be extracted to `/opt/software`.
+
+   ```shell
+   cd /opt/software
+   # Extract the dnbc4tools package
+   tar -xzvf dnbc4tools2.1.3.tar.gz
+   ```
+
+2. During extraction, numerous files will be listed in the terminal. Once extraction is complete, the directory should contain the following items, with `dnbc4tools2.1.3/dnbc4tools` being the executable:
+
+   ```shell
+   dnbc4tools2.1.3/
+   dnbc4tools2.1.3/dnbc4tools
+   dnbc4tools2.1.3/external
+   dnbc4tools2.1.3/lib
+   dnbc4tools2.1.3/misc
+   dnbc4tools2.1.3/sourceC4.bash
+   ```
+
+This completes the installation. *dnbc4tools* is now ready for use.
