@@ -16,6 +16,7 @@ An open source and flexible pipeline to analyze high-throughput DNBelab C Series
 
 - [**installation** ](./doc/installation.md)
 - [**quick start** ](./doc/quickstart.md)
+- [**Analysis workflow (CN)**](./doc/pipeline.md)
 
 ## Support
 
