@@ -1,6 +1,4 @@
 [![Github Release](https://img.shields.io/github/v/release/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software)](https://github.com/MGI-tech-bioinformatics/DNBelab_C_Series_HT_scRNA-analysis-software/releases)
-[![PyPI](https://img.shields.io/pypi/v/dnbc4tools)](https://pypi.org/project/DNBC4tools)
-[![Docker Pulls](https://img.shields.io/docker/pulls/dnbelabc4/dnbc4tools)](https://hub.docker.com/r/dnbelabc4/dnbc4tools)
 
 # DNBelab_C_Series_HT_singlecell-analysis-software
 
